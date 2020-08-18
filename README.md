@@ -22,6 +22,16 @@ create_table "information", force: :cascade do |t|
     t.integer "user_id"
   end
 
+    create_table "tax_informations", force: :cascade do |t|
+    t.integer "w2_wages"
+    t.integer "capital_gains"
+    t.integer "unemployment_insurance"
+    t.integer "self_employment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "information_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -292,13 +302,14 @@ const data = {
 
 ```
 
-I made an algorithm that would calculate a taxpayers tax liability by deciphering IRS tax tables.
+I made an algorithm that would calculate a taxpayers tax liability by deciphering IRS tax tables. There are three other filing statuses that have the similar algorithm.
 [IRSTaxTable](https://www.irs.gov/pub/irs-pdf/i1040tt.pdf)
 
 ## Issues and Resolutions
 
-**ERROR**:
-I was able to successfully allow user login by setting an http cookie locally, however, when I went to deploy both the front and back end, the front end gave a continuous error that chrome and other browers would not allow cross site cookies:
+- 1
+  **ERROR**:
+  I was able to successfully allow user login by setting an http cookie locally, however, when I went to deploy both the front and back end, the front end gave a continuous error that chrome and other browers would not allow cross site cookies:
 
 ```
 A cookie associated with a cross-site resource at http://localhost/ was set without the `SameSite` attribute. It has been blocked, as Chrome now only delivers cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.
@@ -308,6 +319,39 @@ A cookie associated with a cross-site resource at http://localhost/ was set with
 With major help from Andrew Culhane, I was able to purchase a domain from Squarespace and have my backend hosted there (origin on Heroku). I then got an SSL and was able to allow user login and all the functionality my app required.
 
 Check out Andrew's github [here](http://github.com/drewculhane)
-**ERROR**:
+
+- 2
+  **ERROR**:
+  When creating my backend, I set an http cookie which allow refresh functionality without losing user information. I did this creating a user concern that included all the user information. However, I needed to include ALL the models associated with the user. Therefore, in the concern and in the users controller I had to add the following code to allow this to happen:
 
 **RESOLUTION**:
+
+```
+#USER CONTROLLER
+
+def index
+        @users = User.all
+        #render json: @users.to_json(include: :information)
+        render json: @users.to_json(:include => [:information => {:include => :tax_information}])
+    end
+
+#USER CONCERN
+
+module CurrentUserConcern
+    extend ActiveSupport::Concern
+    included do
+        before_action :set_current_user
+    end
+
+    def set_current_user
+        if session[:user_id]
+        @current_user = User.find(session[:user_id]).as_json(:include => [:information => {:include => :tax_information}])
+        end
+    end
+end
+
+```
+
+## Project Retrospective
+
+- After spending close to 100 hours working on the project, it came clear to me that I have enough knowledge of Javascript and the tax code to make my own TurboTax application. If I knew that I could do this from the beginning, I think I would have adapted the user models to include all taxpayer information that is needed to create a basic tax return.
