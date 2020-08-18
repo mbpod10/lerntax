@@ -139,43 +139,21 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP AND POST MVP
 
-| \*  | MVP                                                     | Priority | Estimated Time | Actual Time Invetsted | Time |
+| -   | MVP                                                     | Priority | Estimated Time | Actual Time Invetsted | Time |
 | --- | ------------------------------------------------------- | :------: | :------------: | :-------------------: | :--: |
 | 1   | Set Up Back End                                         |    H     |      -hrs      |          2hr          | -hrs |
 | 2   | Configure Rails For HTTP Cookie                         |    H     |      -hrs      |          4hr          | -hrs |
 | 3   | Create react app that allows basic user functionality   |    H     |      -hrs      |         16hr          | -hrs |
 | 4   | Front End CRUD axios calls                              |    H     |      -hrs      |          4hr          | -hrs |
-| 5   | Research Tax Law                                        |    H     |      -hrs      |         45hr          | -hrs |
+| 5   | Research Tax Law                                        |    H     |      -hrs      |         20hr          | -hrs |
 | 6   | Implement Tax Law Into App Through Writing and Examples |    H     |      -hrs      |         12hr          | -hrs |
 | 7   | Deploy Front End                                        |    H     |      -hrs      |          1hr          | -hrs |
 | 8   | Deploy BackEnd                                          |    H     |      -hrs      |          4hr          | -hrs |
-| \*  | Total                                                   |    H     |      -hrs      |         88hr          | -hrs |
-| \*  | Post MVP                                                | Priority | Estimated Time | Actual Time Invetsted | Time |
-| 9   | API Data Render                                         |    H     |     10hrs      |          8hr          |  NA  |
-| 10  | API Deployment                                          |    H     |     10hrs      |          8hr          |  NA  |
-| 11  | User Login /Authentication                              |    H     |     10hrs      |          8hr          |  NA  |
-| 12  | User CRUD function                                      |    H     |     10hrs      |          8hr          |  NA  |
-| 13  | EXPLAIN TAXES CLEARLY                                   |    H     |     10hrs      |          8hr          |  NA  |
-| 14  | API Data Render                                         |    H     |     10hrs      |          8hr          |  NA  |
-| 15  | Skeleton HTML                                           |    H     |      3hr'      |          4hr          |  NA  |
-| 16  | Skeleton CSS for Mobile                                 |    H     |     3hrs '     |          5hr          |  NA  |
-| 17  | Hamburger                                               |    H     |      1hr       |          3hr          |  NA  |
-| 18  | Regular Nav                                             |    H     |      H '       |          3hr          |  NA  |
-| 19  | Adding Form                                             |    H     |     3hr '      |          6hr          |  NA  |
-| 20  | Other sections and flex                                 |    M     |     4hr '      |          4hr          |  NA  |
-|     | Responsive                                              |    H     |     3hr '      |          5hr          |  NA  |
-|     | Social Media Icons                                      |    L     |     1hr '      |           -           |  NA  |
-|     | Have KEY AND VALUE RENDER TOGETHER                      |    M     |     5hrs '     |          7hr          |  NA  |
-|     | Styling                                                 |    M     |     5hrs '     |          7hr          |  NA  |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
-|     | Total                                                   |    H     |      -hrs      |         60hr          | -hrs |
+| 9   | Styling/BootStrap                                       |    H     |      -hrs      |         20hr          | -hrs |
+| -   | Total                                                   |    -     |       -        |         83hr          |  -   |
+| -   | Post MVP                                                | Priority | Estimated Time | Actual Time Invetsted | Time |
+| 10  | Create Algorithm To Calculate Taxes                     |    H     |      -hrs      |         12hr          | -hrs |
+| -   | Total                                                   |    H     |      -hrs      |         95hr          | -hrs |
 
 | React Components   |                                              Description                                               |
 | ------------------ | :----------------------------------------------------------------------------------------------------: |
@@ -202,18 +180,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | ItemizedDeductions |                                      explains itemized deductions                                      |
 | StandardDeductions |                                      explains standard deductions                                      |
 | TaxList            |                               goes over various steps to calculate taxes                               |
-
-#### PostMVP
-
-| Component              | Priority | Estimated Time | Time Invetsted | Actual Time |
-| ---------------------- | :------: | :------------: | :------------: | :---------: |
-| Add Tax Tables         |    L     |      5hr       |      -hr       |     -hr     |
-| Calculate Taxes        |    L     |      1hr       |      -hr       |     -hr     |
-| Interactive Everywhere |    M     |      4hr       |      -hr       |     -hr     |
-| Materialize            |    H     |      4hr       |      -hr       |     -hr     |
-| Bootstrap              |    H     |      4hr       |      -hr       |     -hr     |
-
-| Total | H | 20hrs | -hrs | -hrs |
 
 ## Additional Libraries
 
