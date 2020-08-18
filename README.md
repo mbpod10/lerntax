@@ -233,6 +233,91 @@ const data = {
         prevTax: 35013,
       },
     },
+    hoh: {
+      bracket1: {
+        bracketTop: 13851,
+        taxRate: 0.1,
+        prevTax: null,
+      },
+      bracket2: {
+        bracketTop: 52851,
+        taxRate: 0.12,
+        prevTax: 1385,
+      },
+      bracket3: {
+        bracketTop: 84201,
+        taxRate: 0.22,
+        prevTax: 6062,
+      },
+      bracket4: {
+        bracketTop: 100001,
+        taxRate: 0.24,
+        prevTax: 12968,
+      },
+      bracket5: {
+        bracketTop: 160000,
+        taxRate: 0.24,
+        prevTax: 7246,
+      },
+      bracket6: {
+        bracketTop: 204100,
+        taxRate: 0.32,
+        prevTax: 20102,
+      },
+      bracket7: {
+        bracketTop: 510300,
+        taxRate: 0.35,
+        prevTax: 26225,
+      },
+      bracket8: {
+        bracketTop: null,
+        taxRate: 0.37,
+        prevTax: 36431,
+      },
+    },
+    mfj: {
+      bracket1: {
+        bracketTop: 19401,
+        taxRate: 0.1,
+        prevTax: null,
+      },
+      bracket2: {
+        bracketTop: 78951,
+        taxRate: 0.12,
+        prevTax: 1940,
+      },
+      bracket3: {
+        bracketTop: 100001,
+        taxRate: 0.22,
+        prevTax: 9092,
+      },
+      bracket4: {
+        bracketTop: 168400,
+        taxRate: 0.22,
+        prevTax: 8283,
+      },
+      bracket5: {
+        bracketTop: 321450,
+        taxRate: 0.24,
+        prevTax: 11651,
+      },
+      bracket6: {
+        bracketTop: 408200,
+        taxRate: 0.32,
+        prevTax: 37367,
+      },
+      bracket7: {
+        bracketTop: 612350,
+        taxRate: 0.35,
+        prevTax: 49613,
+      },
+      bracket8: {
+        bracketTop: null,
+        taxRate: 0.37,
+        prevTax: 61860,
+      },
+    },
+  };
     if (standardDeduction === "Single $12,200") {
       parsedStandardDeduction = 12200;
       let taxInVar =
@@ -294,6 +379,117 @@ const data = {
         setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
         setMarginalRate(`${data.single.bracket8.taxRate * 100}%`);
       }
+    } else if (standardDeduction === "Head Of Household $18,350") {
+      parsedStandardDeduction = 18350;
+      let taxInVar =
+        parsedW2 + parsedAdd - parseAdjustments - parsedStandardDeduction;
+
+      if (taxInVar < 0) {
+        setTaxableIncome(0);
+      } else if (taxInVar < data.hoh.bracket1.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL = taxInVar * data.hoh.bracket1.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.hoh.bracket1.taxRate * 100}%`);
+      } else if (taxInVar < data.hoh.bracket2.bracketTop) {
+        setTaxableIncome(taxInVar);
+        let temp = taxInVar - data.hoh.bracket1.bracketTop;
+        parsedTL = data.hoh.bracket2.prevTax + temp * data.hoh.bracket2.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.hoh.bracket2.taxRate * 100}%`);
+      } else if (taxInVar < data.hoh.bracket3.bracketTop) {
+        setTaxableIncome(taxInVar);
+        let temp = taxInVar - data.hoh.bracket2.bracketTop;
+        parsedTL = data.hoh.bracket3.prevTax + temp * data.hoh.bracket3.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.hoh.bracket3.taxRate * 100}%`);
+      } else if (taxInVar < data.hoh.bracket4.bracketTop) {
+        setTaxableIncome(taxInVar);
+        let temp = taxInVar - data.hoh.bracket3.bracketTop;
+        parsedTL = data.hoh.bracket4.prevTax + temp * data.hoh.bracket4.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.hoh.bracket4.taxRate * 100}%`);
+      } else if (taxInVar < data.hoh.bracket5.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.hoh.bracket5.taxRate - data.hoh.bracket5.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.hoh.bracket5.taxRate * 100}%`);
+      } else if (taxInVar < data.hoh.bracket6.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.hoh.bracket6.taxRate - data.hoh.bracket6.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.hoh.bracket6.taxRate * 100}%`);
+      } else if (taxInVar < data.hoh.bracket7.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.hoh.bracket7.taxRate - data.hoh.bracket7.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.hoh.bracket7.taxRate * 100}%`);
+      } else {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.hoh.bracket8.taxRate - data.hoh.bracket8.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.hoh.bracket8.taxRate * 100}%`);
+      }
+    } else if (standardDeduction === "Married Filing Jointly $24,400") {
+      parsedStandardDeduction = 24400;
+      let taxInVar =
+        parsedW2 + parsedAdd - parseAdjustments - parsedStandardDeduction;
+      if (taxInVar < 0) {
+        setTaxableIncome(0);
+      } else if (taxInVar < data.mfj.bracket1.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL = taxInVar * data.mfj.bracket1.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.mfj.bracket1.taxRate * 100}%`);
+      } else if (taxInVar < data.mfj.bracket2.bracketTop) {
+        setTaxableIncome(taxInVar);
+        let temp = taxInVar - data.mfj.bracket1.bracketTop;
+        parsedTL = data.mfj.bracket2.prevTax + temp * data.mfj.bracket2.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.mfj.bracket2.taxRate * 100}%`);
+      } else if (taxInVar < data.mfj.bracket3.bracketTop) {
+        setTaxableIncome(taxInVar);
+        let temp = taxInVar - data.mfj.bracket2.bracketTop;
+        parsedTL = data.mfj.bracket3.prevTax + temp * data.mfj.bracket3.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.mfj.bracket3.taxRate * 100}%`);
+      } else if (taxInVar < data.mfj.bracket4.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.mfj.bracket4.taxRate - data.mfj.bracket4.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.mfj.bracket4.taxRate * 100}%`);
+      } else if (taxInVar < data.mfj.bracket5.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.mfj.bracket5.taxRate - data.mfj.bracket5.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.mfj.bracket5.taxRate * 100}%`);
+      } else if (taxInVar < data.mfj.bracket6.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.mfj.bracket6.taxRate - data.mfj.bracket6.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.mfj.bracket6.taxRate * 100}%`);
+      } else if (taxInVar < data.mfj.bracket7.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.mfj.bracket7.taxRate - data.mfj.bracket7.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.mfj.bracket7.taxRate * 100}%`);
+      } else {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.mfj.bracket8.taxRate - data.mfj.bracket8.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.mfj.bracket8.taxRate * 100}%`);
+      }
+    } else {
+      parsedStandardDeduction = null;
     }
 
 ```
@@ -301,7 +497,7 @@ const data = {
 I made an algorithm that would calculate a taxpayers tax liability by deciphering IRS tax tables. There are three other filing statuses that have the similar algorithm.
 [IRSTaxTable](https://www.irs.gov/pub/irs-pdf/i1040tt.pdf)
 
-2. When a user tries to register, there needs to logic that tells the user that their passwords don't match, a user with that same email exists, or the password isn't longer than 6 characters. I created the logic here:
+2. When a user tries to register, there needs to be logic that tells the user that their passwords don't match, a user with the input email exists, or the password isn't longer than 6 characters. I created the logic in the RegistrationsController
 
 ```
 class RegistrationsController < ApplicationController
