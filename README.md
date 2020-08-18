@@ -137,7 +137,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Also, the page has to be resonsive that depends on what type of device the user is using
 - Also, it has to present a clean and representation of my skill as a React and Rails developer
 
-#### MVP
+#### MVP AND POST MVP
 
 | \*  | MVP                                                     | Priority | Estimated Time | Actual Time Invetsted | Time |
 | --- | ------------------------------------------------------- | :------: | :------------: | :-------------------: | :--: |
@@ -149,11 +149,8 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | 6   | Implement Tax Law Into App Through Writing and Examples |    H     |      -hrs      |         12hr          | -hrs |
 | 7   | Deploy Front End                                        |    H     |      -hrs      |          1hr          | -hrs |
 | 8   | Deploy BackEnd                                          |    H     |      -hrs      |          4hr          | -hrs |
-| --- | ------------------------------------------------------- | :------: | :------------: | :-------------------: | :--: |
 | \*  | Total                                                   |    H     |      -hrs      |         88hr          | -hrs |
-| --- | ------------------------------------------------------- | :------: | :------------: | :-------------------: | :--: |
 | \*  | Post MVP                                                | Priority | Estimated Time | Actual Time Invetsted | Time |
-| --- | ------------------------------------------------------- | :------: | :------------: | :-------------------: | :--: |
 | 9   | API Data Render                                         |    H     |     10hrs      |          8hr          |  NA  |
 | 10  | API Deployment                                          |    H     |     10hrs      |          8hr          |  NA  |
 | 11  | User Login /Authentication                              |    H     |     10hrs      |          8hr          |  NA  |
