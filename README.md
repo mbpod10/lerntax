@@ -139,25 +139,41 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP
 
-| Component                          | Priority | Estimated Time | Actual Time Invetsted | Time |
-| ---------------------------------- | :------: | :------------: | :-------------------: | :--: |
-| API Data Render                    |    H     |     10hrs      |          8hr          |  NA  |
-| API Deployment                     |    H     |     10hrs      |          8hr          |  NA  |
-| User Login /Authentication         |    H     |     10hrs      |          8hr          |  NA  |
-| User CRUD function                 |    H     |     10hrs      |          8hr          |  NA  |
-| EXPLAIN TAXES CLEARLY              |    H     |     10hrs      |          8hr          |  NA  |
-| API Data Render                    |    H     |     10hrs      |          8hr          |  NA  |
-| Skeleton HTML                      |    H     |      3hr'      |          4hr          |  NA  |
-| Skeleton CSS for Mobile            |    H     |     3hrs '     |          5hr          |  NA  |
-| Hamburger                          |    H     |      1hr       |          3hr          |  NA  |
-| Regular Nav                        |    H     |      H '       |          3hr          |  NA  |
-| Adding Form                        |    H     |     3hr '      |          6hr          |  NA  |
-| Other sections and flex            |    M     |     4hr '      |          4hr          |  NA  |
-| Responsive                         |    H     |     3hr '      |          5hr          |  NA  |
-| Social Media Icons                 |    L     |     1hr '      |           -           |  NA  |
-| Have KEY AND VALUE RENDER TOGETHER |    M     |     5hrs '     |          7hr          |  NA  |
-| Styling                            |    M     |     5hrs '     |          7hr          |  NA  |
-| Total                              |    H     |      -hrs      |         60hr          | -hrs |
+| \*  | Action                                                | Priority | Estimated Time | Actual Time Invetsted | Time |
+| --- | ----------------------------------------------------- | :------: | :------------: | :-------------------: | :--: |
+| 1   | Set Up Back End                                       |    H     |      -hrs      |          2hr          | -hrs |
+| 2   | Configure Rails For HTTP Cookie                       |    H     |      -hrs      |          4hr          | -hrs |
+| 3   | Create react app that allows basic user functionality |    H     |      -hrs      |          6hr          | -hrs |
+| 4   |                                                       |    H     |      -hrs      |         60hr          | -hrs |
+| 5   |                                                       |    H     |      -hrs      |         60hr          | -hrs |
+| 6   |                                                       |    H     |      -hrs      |         60hr          | -hrs |
+| 7   |                                                       |    H     |      -hrs      |         60hr          | -hrs |
+| 8   |                                                       |    H     |      -hrs      |         60hr          | -hrs |
+| 9   | API Data Render                                       |    H     |     10hrs      |          8hr          |  NA  |
+| 10  | API Deployment                                        |    H     |     10hrs      |          8hr          |  NA  |
+| 11  | User Login /Authentication                            |    H     |     10hrs      |          8hr          |  NA  |
+| 12  | User CRUD function                                    |    H     |     10hrs      |          8hr          |  NA  |
+| 13  | EXPLAIN TAXES CLEARLY                                 |    H     |     10hrs      |          8hr          |  NA  |
+| 14  | API Data Render                                       |    H     |     10hrs      |          8hr          |  NA  |
+| 15  | Skeleton HTML                                         |    H     |      3hr'      |          4hr          |  NA  |
+| 16  | Skeleton CSS for Mobile                               |    H     |     3hrs '     |          5hr          |  NA  |
+| 17  | Hamburger                                             |    H     |      1hr       |          3hr          |  NA  |
+| 18  | Regular Nav                                           |    H     |      H '       |          3hr          |  NA  |
+| 19  | Adding Form                                           |    H     |     3hr '      |          6hr          |  NA  |
+| 20  | Other sections and flex                               |    M     |     4hr '      |          4hr          |  NA  |
+|     | Responsive                                            |    H     |     3hr '      |          5hr          |  NA  |
+|     | Social Media Icons                                    |    L     |     1hr '      |           -           |  NA  |
+|     | Have KEY AND VALUE RENDER TOGETHER                    |    M     |     5hrs '     |          7hr          |  NA  |
+|     | Styling                                               |    M     |     5hrs '     |          7hr          |  NA  |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
+|     | Total                                                 |    H     |      -hrs      |         60hr          | -hrs |
 
 | React Components   |                                              Description                                               |
 | ------------------ | :----------------------------------------------------------------------------------------------------: |
