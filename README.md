@@ -187,7 +187,7 @@ React BootStrap, bcrypt, Ruby, Rails, http cookie
 
 ## Code Snippet
 
-code snippet most proud of:
+1. code snippet most proud of:
 
 ```
 const data = {
@@ -300,6 +300,44 @@ const data = {
 
 I made an algorithm that would calculate a taxpayers tax liability by deciphering IRS tax tables. There are three other filing statuses that have the similar algorithm.
 [IRSTaxTable](https://www.irs.gov/pub/irs-pdf/i1040tt.pdf)
+
+2. When a user tries to register, there needs to logic that tells the user that their passwords don't match, a user with that same email exists, or the password isn't longer than 6 characters. I created the logic here:
+
+```
+class RegistrationsController < ApplicationController
+
+    def create
+
+        if params['user']['password'] != params['user']['password_confirmation']
+            render json: {
+                status: "Passwords Dont Match"
+            }
+         elsif User.where(email: params['user']['email']).first
+            render json: {
+                status: "Email Matches Current User"
+            }
+        elsif params['user']['password'].length < 6
+            render json: {
+                status: "Password Must Contain More Than 6 Characters"
+            }
+        else user = User.create!(
+                email: params['user']['email'],
+                password: params['user']['password'],
+                password_confirmation: params['user']['password_confirmation']
+            )
+            if user
+                session[:user_id] = user.id
+                render json: {
+                    status: :created,
+                    user: user
+            }
+            else
+                render json: {status: 500, text: "not working"}
+            end
+        end
+    end
+end
+```
 
 ## Issues and Resolutions
 
