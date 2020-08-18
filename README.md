@@ -38,28 +38,41 @@ I MAY INCLUDE TAX TABLE API WITH MONGO (IT WILL SIMPLY COMPARE WITH USRE INPUT)
 API Structure
 
 ```
-  [
+  data = [
     {
-      "id": 1,
-      "email": "m@gmail.com",
-      "password_digest": "$2a$12$O1s5Bl3616IfjKJLYTJTEO/4OOMQrz71cpnx.0xGV/8rm9XkROE7G",
-      "created_at": "2020-08-09T21:12:37.746Z",
-      "updated_at": "2020-08-09T21:12:37.746Z",
-      "information": [
+      id: 1,
+      email: "m@gmail.com",
+      password_digest:
+        "$2a$12$Kvk5mpZE4kXbWSHkZ/yuIO6Cv/WILcttYbEmjWBHsAlWjqEH1lrCW",
+      created_at: "2020-08-17T19:14:44.280Z",
+      updated_at: "2020-08-17T19:14:44.280Z",
+      information: [
         {
-            "id": 1,
-            "name": "Kcorb Blansing",
-            "citizen": true,
-            "age": 25,
-            "marital_status": "single",
-            "address": "no",
-            "dependent": false,
-            "created_at": "2020-08-09T21:12:37.986Z",
-            "updated_at": "2020-08-09T21:12:37.986Z",
-            "user_id": 1
-        }
-      ]
-    }
+          id: 1,
+          name: "Ckorb Blansing",
+          age: 25,
+          marital_status: "single",
+          state: "NJ",
+          dependent: false,
+          created_at: "2020-08-17T19:14:44.335Z",
+          updated_at: "2020-08-17T19:14:44.335Z",
+          user_id: 1,
+          tax_information: [
+            {
+              id: 1,
+              w2_wages: 20000,
+              capital_gains: 500,
+              unemployment_insurance: 0,
+              self_employment: 0,
+              created_at: "2020-08-17T19:14:44.375Z",
+              updated_at: "2020-08-17T19:14:44.375Z",
+              information_id: 1,
+            },
+          ],
+        },
+      ],
+    },
+  ];
   ]
 
 
@@ -77,16 +90,16 @@ Upload images of wireframe to imgur and add the link here with a description of 
 
 | Day   | Deliverable                                                 | Status     |
 | ----- | ----------------------------------------------------------- | ---------- |
-| Day 1 | Project Description                                         | inComplete |
-| Day 1 | Wireframes / Priority Matrix / Timeline /WorkSheet          | inComplete |
-| Day 1 | Complete Backend on Rails                                   | inComplete |
-| Day 2 | Allow User Login, Authorization to certain portions of site | inComplete |
-| Day 3 | Apply Crud That Will Allow Customization of Profile         | inComplete |
-| Day 3 | Apply CSS and Styling                                       | inComplete |
-| Day 4 | Get Tables Working                                          | inComplete |
-| Day 4 | Start rendering information about tax law                   | inComplete |
-| Day 5 | MVP/Post MVP                                                | inComplete |
-| Day 5 | Final Touches                                               | inComplete |
+| Day 1 | Project Description                                         | Complete   |
+| Day 1 | Wireframes / Priority Matrix / Timeline /WorkSheet          | Complete   |
+| Day 1 | Complete Backend on Rails                                   | Complete   |
+| Day 2 | Allow User Login, Authorization to certain portions of site | Complete   |
+| Day 3 | Apply Crud That Will Allow Customization of Profile         | Complete   |
+| Day 3 | Apply CSS and Styling                                       | Complete   |
+| Day 4 | Get Tables Working                                          | Complete   |
+| Day 4 | Start rendering information about tax law                   | Complete   |
+| Day 5 | MVP/Post MVP                                                | Complete   |
+| Day 5 | Final Touches                                               | Complete   |
 | Day 6 | Present                                                     | incomplete |
 
 ### MVP/PostMVP - 5min
@@ -136,7 +149,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | Styling                            |    M     |     5hrs '     |          7hr          |  NA  |
 | Total                              |    H     |      -hrs      |         60hr          | -hrs |
 
-| React Componentss       |                       Description                        |
+| React Components        |                       Description                        |
 | ----------------------- | :------------------------------------------------------: |
 | App                     |           Set Up App that allows Route Render            |
 | Nav                     | Acts as header that has links to different parts of page |
@@ -159,32 +172,142 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | Interactive Everywhere |    M     |      4hr       |      -hr       |     -hr     |
 | Materialize            |    H     |      4hr       |      -hr       |     -hr     |
 | Bootstrap              |    H     |      4hr       |      -hr       |     -hr     |
-| Make own icon          |    L     |      4hr       |      -hr       |     -hr     |
-| Total                  |    H     |     20hrs      |      -hrs      |    -hrs     |
+
+| Total | H | 20hrs | -hrs | -hrs |
 
 ## Additional Libraries
 
-React BootStrap, bcrypt, Ruby, Rails
+React BootStrap, bcrypt, Ruby, Rails, http cookie
 
 ## Code Snippet
 
 code snippet most proud of:
 
 ```
-
+const data = {
+    single: {
+      bracket1: {
+        bracketTop: 9701,
+        taxRate: 0.1,
+        prevTax: null,
+      },
+      bracket2: {
+        bracketTop: 39476,
+        taxRate: 0.12,
+        prevTax: 970,
+      },
+      bracket3: {
+        bracketTop: 84201,
+        taxRate: 0.22,
+        prevTax: 4543,
+      },
+      bracket4: {
+        bracketTop: 100001,
+        taxRate: 0.24,
+        prevTax: 14383,
+      },
+      bracket5: {
+        bracketTop: 160725,
+        taxRate: 0.24,
+        prevTax: 5826,
+      },
+      bracket6: {
+        bracketTop: 204100,
+        taxRate: 0.32,
+        prevTax: 18684,
+      },
+      bracket7: {
+        bracketTop: 510300,
+        taxRate: 0.35,
+        prevTax: 24807,
+      },
+      bracket8: {
+        bracketTop: null,
+        taxRate: 0.37,
+        prevTax: 35013,
+      },
+    },
+    if (standardDeduction === "Single $12,200") {
+      parsedStandardDeduction = 12200;
+      let taxInVar =
+        parsedW2 + parsedAdd - parseAdjustments - parsedStandardDeduction;
+      if (taxInVar < 0) {
+        setTaxableIncome(0);
+      } else if (taxInVar < data.single.bracket1.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL = taxInVar * data.single.bracket1.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.single.bracket1.taxRate * 100}%`);
+      } else if (taxInVar < data.single.bracket2.bracketTop) {
+        setTaxableIncome(taxInVar);
+        let temp = taxInVar - data.single.bracket1.bracketTop;
+        parsedTL =
+          data.single.bracket2.prevTax + temp * data.single.bracket2.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.single.bracket2.taxRate * 100}%`);
+      } else if (taxInVar < data.single.bracket3.bracketTop) {
+        setTaxableIncome(taxInVar);
+        let temp = taxInVar - data.single.bracket2.bracketTop;
+        parsedTL =
+          data.single.bracket3.prevTax + temp * data.single.bracket3.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.single.bracket3.taxRate * 100}%`);
+      } else if (taxInVar < data.single.bracket4.bracketTop) {
+        setTaxableIncome(taxInVar);
+        let temp = taxInVar - data.single.bracket3.bracketTop;
+        parsedTL =
+          data.single.bracket4.prevTax + temp * data.single.bracket4.taxRate;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.single.bracket4.taxRate * 100}%`);
+      } else if (taxInVar < data.single.bracket5.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.single.bracket5.taxRate -
+          data.single.bracket5.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.single.bracket5.taxRate * 100}%`);
+      } else if (taxInVar < data.single.bracket6.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.single.bracket6.taxRate -
+          data.single.bracket6.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.single.bracket6.taxRate * 100}%`);
+      } else if (taxInVar < data.single.bracket7.bracketTop) {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.single.bracket7.taxRate -
+          data.single.bracket7.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.single.bracket7.taxRate * 100}%`);
+      } else {
+        setTaxableIncome(taxInVar);
+        parsedTL =
+          taxInVar * data.single.bracket8.taxRate -
+          data.single.bracket8.prevTax;
+        setEffectiveRate(`${((parsedTL / taxInVar) * 100).toFixed(2)}%`);
+        setMarginalRate(`${data.single.bracket8.taxRate * 100}%`);
+      }
+    }
 
 ```
+
+I made an algorithm that would calculate a taxpayers tax liability by deciphering IRS tax tables.
+[IRSTaxTable](https://www.irs.gov/pub/irs-pdf/i1040tt.pdf)
 
 ## Issues and Resolutions
 
 **ERROR**:
+I was able to successfully allow user login by setting an http cookie locally, however, when I went to deploy both the front and back end, the front end gave a continuous error that chrome and other browers would not allow cross site cookies:
 
 ```
-[]
+A cookie associated with a cross-site resource at http://localhost/ was set without the `SameSite` attribute. It has been blocked, as Chrome now only delivers cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.
 ```
 
 **RESOLUTION**:
+With major help from Andrew Culhane, I was able to purchase a domain from Squarespace and have my backend hosted there (origin on Heroku). I then got an SSL and was able to allow user login and all the functionality my app required.
 
+Check out Andrew's github [here](http://github.com/drewculhane)
 **ERROR**:
 
 **RESOLUTION**:
