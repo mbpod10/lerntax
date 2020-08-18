@@ -159,19 +159,31 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | Styling                            |    M     |     5hrs '     |          7hr          |  NA  |
 | Total                              |    H     |      -hrs      |         60hr          | -hrs |
 
-| React Components        |                       Description                        |
-| ----------------------- | :------------------------------------------------------: |
-| App                     |           Set Up App that allows Route Render            |
-| Nav                     | Acts as header that has links to different parts of page |
-| Footer                  |              footer that also allows links               |
-| Main                    |                 main currency rendering                  |
-| Adding Form             |                            H                             |
-| Other sections and flex |                            M                             |
-|                         |                            H                             |
-| Responsive              |                            H                             |
-| Social Media Icons      |                            L                             |
-| Styling                 |                            M                             |
-| Total                   |                            H                             |
+| React Components   |                                              Description                                               |
+| ------------------ | :----------------------------------------------------------------------------------------------------: |
+| App                |                                  Set Up App that allows Route Render                                   |
+| About.js           |                       Acts as home page and give mission statement about LernTax                       |
+| CalcTax            |               Hosts the algorithm that calculates taxes based on various filing statuses               |
+| Credits            |                                    Info page that explains credits                                     |
+| Dashboard          |                                   Acts as registration for new users                                   |
+| DependentsCards    |                  Child of dependents and gives various examples of who is a dependent                  |
+| Dependents         | Explains about who is dependent as well as a form that allows the user to see if they have a dependent |
+| EditInormation     |                   Allows the user to edit their name, age, filing status, dependent                    |
+| Footer             |                    footer and disclaimer that this app is not providing tax advice                     |
+| Home               |                            acts as successful login page when login occurs                             |
+| Login              |                                        allows user to login in                                         |
+| Profile            |                       displays user info and allows onc click delete of profile                        |
+| TaxInfo            |         allows user to enter their wq income, unemployment, self employment, and capital gains         |
+| TaxRates           |                   describes the difference between marginal and effective tax rates                    |
+| CalcTaxForm        |                                  form for user input to calculate tax                                  |
+| LoginForm          |                                     form that is child of Login.js                                     |
+| Registration       |                                    allows user to enter information                                    |
+| TaxInfoForm        |                                       form and child of TaxInfo                                        |
+| AGI                |                                              explains AGI                                              |
+| GrossTaxableIncome |                                        explains what income is                                         |
+| ItemizedDeductions |                                      explains itemized deductions                                      |
+| StandardDeductions |                                      explains standard deductions                                      |
+| TaxList            |                               goes over various steps to calculate taxes                               |
 
 #### PostMVP
 
