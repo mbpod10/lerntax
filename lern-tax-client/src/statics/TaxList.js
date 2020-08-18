@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
-import { Route, Link } from "react-router-dom";
-import IncomeNum from "./routes/IncomeNum";
-import GrossTaxableIncome from "./GrossTaxableIncome";
+import { Link } from "react-router-dom";
 
 const TaxList = () => {
   function GrossTaxableIncome2() {

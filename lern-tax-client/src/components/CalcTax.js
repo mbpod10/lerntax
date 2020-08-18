@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CalcTaxForm from "../components/auth/CalcTaxForm";
 import * as ReactBootStrap from "react-bootstrap";
 
 const CalcTax = () => {
@@ -155,7 +154,7 @@ const CalcTax = () => {
       setw2Income(event.target.value);
       parseInt(w2Income, 10);
       setError("");
-      console.log(w2Income);
+      //console.log(w2Income);
     }
   };
   const handleChange2 = (event) => {

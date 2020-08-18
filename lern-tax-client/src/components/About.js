@@ -3,7 +3,6 @@ import * as ReactBootStrap from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const About = (props) => {
-  console.log(props);
   return (
     <div className="lern-tax-about">
       <div>

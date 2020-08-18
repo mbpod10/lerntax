@@ -6,16 +6,13 @@ import * as ReactBootStrap from "react-bootstrap";
 import APIConfig from "../APIConfig";
 
 const Login = (props) => {
-  //console.log("Add props", props.match.params.id);
-  console.log("user", props.user);
-  console.log(props);
   const [input, setInput] = useState({
     user: {
       email: "",
       password: "",
     },
   });
-  //const [user, setReview] = useState(null);
+
   const [errorStatus, setErrorStatus] = useState("");
 
   const handleSuccessfulAuth = (data) => {
@@ -25,7 +22,7 @@ const Login = (props) => {
   };
 
   const handleChange = (event) => {
-    console.log("event", event.target.name, event.target.value);
+    //console.log("event", event.target.name, event.target.value);
     setInput({
       ...input,
       [event.target.name]: event.target.value,
@@ -33,7 +30,7 @@ const Login = (props) => {
   };
 
   const handleSubmit = (event) => {
-    console.log("form submitted");
+    //console.log("form submitted");
     event.preventDefault();
     axios
       .post(
@@ -50,8 +47,6 @@ const Login = (props) => {
         console.log("res from  login", resonse);
         if (resonse.data.logged_in) {
           handleSuccessfulAuth(resonse.data);
-          // window.location.reload();
-          // props.history.push(`/dashboard`);
         } else {
           setErrorStatus(resonse.data.status);
         }
@@ -62,8 +57,8 @@ const Login = (props) => {
   };
   return (
     <div>
-      <h4>Status: {props.loggedInStatus}</h4>
-      <h1>Login</h1>
+      {/* <h4>Status: {props.loggedInStatus}</h4> */}
+      <h1>Login</h1> <br />
       {props.loggedInStatus === "LOGGED_IN" ? (
         "Successful Login!"
       ) : (

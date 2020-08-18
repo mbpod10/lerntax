@@ -1,6 +1,6 @@
 import React from "react";
 import * as ReactBootStrap from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 const AGI = () => {
   return (
     <>

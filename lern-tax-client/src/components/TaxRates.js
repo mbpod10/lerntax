@@ -112,19 +112,15 @@ const TaxRates = () => {
             <td>Remember, Philip is filing as single</td>
           </tr>
           <tr>
-            {" "}
             <td>First $9,700 @ 10% tax rate = $970</td>
           </tr>
           <tr>
-            {" "}
             <td>Next $29,775 @ 12% tax rate = $3,573</td>
           </tr>
           <tr>
-            {" "}
             <td>Next $4,325 @ 22% tax rate = $952</td>
           </tr>
           <tr>
-            {" "}
             <td>Total = $970 + $3,573 + $952 = $5,495</td>
           </tr>
         </tbody>
@@ -146,56 +142,48 @@ const TaxRates = () => {
             <td>Remember, Kelly and Brad are MFJ</td>
           </tr>
           <tr>
-            {" "}
             <td>First $19,400 @ 10% tax rate = $1,940</td>
           </tr>
           <tr>
-            {" "}
             <td>Next $59,550 @ 12% tax rate = $7,146</td>
           </tr>
           <tr>
-            {" "}
             <td>Next $89,450 @ 22% tax rate = $19,679</td>
           </tr>
           <tr>
-            {" "}
             <td>Next $7,200 @ 24% tax rate = $1,728</td>
           </tr>
           <tr>
-            {" "}
             <td>Total = $1,940 + $7,146 + $19,679 + $1,728 = $30,493</td>
           </tr>
         </tbody>
       </ReactBootStrap.Table>
       <ReactBootStrap.Media as="li">
-        {" "}
         <br />
         <ReactBootStrap.Media.Body>
           <h4>Marginal Tax Rates</h4>
           <p>
             Once you have your tax liability it's easy to find your effective
-            tax rate. It is a simple calcuation of{" "}
+            tax rate. It is a simple calcuation of
             <b>
               <i>(Tax Liability / Taxable Income)</i>
             </b>
             . Here are the effective rates for the previous examples.
           </p>
         </ReactBootStrap.Media.Body>
-      </ReactBootStrap.Media>{" "}
+      </ReactBootStrap.Media>
       <ReactBootStrap.Table striped bordered hover variant="dark">
         <tbody>
           <tr>
             <td>Philip</td>
           </tr>
           <tr>
-            {" "}
             <td>$5,495 TL / $43,800 TI = 12.55% effective</td>
           </tr>
           <tr>
             <td>Kelly and Brad</td>
           </tr>
           <tr>
-            {" "}
             <td>$30,493 TL / $175,600 TI = 17.37% effective</td>
           </tr>
         </tbody>

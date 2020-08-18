@@ -21,6 +21,7 @@ import Dependents from "./components/Dependents";
 import Footer from "./components/Footer";
 import Credits from "./components/Credits";
 import TaxRates from "./components/TaxRates";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState("NOT_LOGGED_IN");
@@ -37,7 +38,6 @@ function App() {
       axios
         .get(`${APIConfig}/logged_in`, { withCredentials: true })
         .then((response) => {
-          //console.log("logged in?", response);
           if (response.data.logged_in && loggedIn === "NOT_LOGGED_IN") {
             setLoggedIn("LOGGED_IN");
             setUser(response.data.user);
@@ -58,16 +58,13 @@ function App() {
     setLoggedIn("NOT_LOGGED_IN");
     setUser({});
   };
-  //console.log(email);
 
   const handleLogoutClick = () => {
     axios
       .delete(`${APIConfig}/logout`, { withCredentials: true })
       .then((response) => {
-        //console.log("logout", response);
         handleLogout();
         window.location.reload();
-        //props.history.push("/");
       })
       .catch((error) => {
         console.log("Logout error", error);
@@ -87,18 +84,80 @@ function App() {
         expand="lg"
         bg="dark"
         variant="dark"
-        id="top"
       >
-        <ReactBootStrap.Navbar.Brand href="/"></ReactBootStrap.Navbar.Brand>
+        <ReactBootStrap.Navbar.Brand>
+          <Link to="/">LernTax</Link>
+        </ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
           <ReactBootStrap.Nav className="mr-auto">
-            {/* <Link className="nav-link" to="/">
-              Home
-            </Link> */}
-            <Link className="nav-link" to="/">
-              LernTax
-            </Link>
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/tax-basics">Basics</Link>
+            </ReactBootStrap.Nav.Link>
+
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/calc-tax">Calc</Link>
+            </ReactBootStrap.Nav.Link>
+
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/dependents">Dependents</Link>
+            </ReactBootStrap.Nav.Link>
+
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/credits">Credits</Link>
+            </ReactBootStrap.Nav.Link>
+
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/tax-rates">Rates</Link>
+            </ReactBootStrap.Nav.Link>
+
+            {loggedIn === "LOGGED_IN" ? (
+              <>
+                <ReactBootStrap.Nav.Link href=" ">
+                  <Link to="/dashboard">Dashboard</Link>
+                </ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link href=" ">
+                  <Link to={`/profile/${user.id}`}>Profile</Link>
+                </ReactBootStrap.Nav.Link>
+              </>
+            ) : null}
+          </ReactBootStrap.Nav>
+
+          <ReactBootStrap.Nav>
+            {loggedIn === "LOGGED_IN" ? (
+              <>
+                <ReactBootStrap.Nav.Link eventKey={2} href=" ">
+                  <Link to="/"> {email}</Link>
+                </ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link eventKey={2} href=" ">
+                  <Link to="/" onClick={() => handleLogoutClick()}>
+                    {" "}
+                    Logout
+                  </Link>
+                </ReactBootStrap.Nav.Link>
+              </>
+            ) : (
+              <ReactBootStrap.Nav.Link eventKey={2}>
+                <Link to="/login">Login</Link>
+              </ReactBootStrap.Nav.Link>
+            )}
+          </ReactBootStrap.Nav>
+        </ReactBootStrap.Navbar.Collapse>
+      </ReactBootStrap.Navbar>
+
+      {/* <ReactBootStrap.Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        variant="dark"
+        id="top"
+      >
+        <ReactBootStrap.Navbar.Brand>
+          <Link to="/">LernTax</Link>
+        </ReactBootStrap.Navbar.Brand>
+        <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
+          <ReactBootStrap.Nav className="mr-auto">
             <Link className="nav-link" to="/tax-basics">
               Basics
             </Link>
@@ -146,7 +205,7 @@ function App() {
             </ReactBootStrap.Nav>
           )}
         </ReactBootStrap.Navbar.Collapse>
-      </ReactBootStrap.Navbar>
+      </ReactBootStrap.Navbar> */}
 
       <Switch>
         <React.Fragment>

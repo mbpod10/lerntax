@@ -35,7 +35,6 @@ const Registration = ({ user, handleChange, handleSubmit }) => {
         <ReactBootStrap.Form.Control
           type="password"
           placeholder="Password Confirmation"
-          type="password"
           value={user.password_confirmation}
           name="password_confirmation"
           onChange={handleChange}

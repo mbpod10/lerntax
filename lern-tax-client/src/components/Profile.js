@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Registration from "../components/auth/Registration";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
@@ -10,41 +9,29 @@ const Profile = (props) => {
   const [id, setID] = useState(props.user.id);
   const [information, setInfo] = useState([]);
   const [name, setName] = useState("");
-  //   console.log("user", user);
-  //   console.log("id", id);
-  console.log(props);
 
   useEffect(() => {
     setUser(props.user);
-    console.log("user", user);
     const makeAPICall = async () => {
-      //console.log(props.match.params);
       try {
         const response = await axios(
           `${APIConfig}/users/${props.match.params.id}}`
         );
-        //console.log("response", response);
-        console.log("response", response);
         setInfo(response.data.information);
-        console.log("taxstuff", response.data.information);
         setName(response.data.information.name);
-        console.log(response.data.information.name);
       } catch (err) {
         console.error(err);
       }
     };
     makeAPICall();
   }, []);
-  console.log("information", information);
 
   const deleteAccount = (event) => {
     event.preventDefault();
-    console.log("delete");
     props.handleLogoutClick();
     axios
       .delete(`${APIConfig}/users/${props.match.params.id}.json`)
       .then((response) => {
-        console.log("res from  destroy", response);
         props.history.push(`/`);
         window.location.reload();
       })
@@ -55,7 +42,7 @@ const Profile = (props) => {
 
   const informationArray = information.map((element, index) => {
     return (
-      <div className="info-div">
+      <div className="info-div" key={element.index}>
         <ReactBootStrap.ListGroup className="list-group2">
           <ReactBootStrap.ListGroup.Item variant="dark">
             Name:
@@ -105,10 +92,7 @@ const Profile = (props) => {
 
   return (
     <>
-      {/* {props.email ? <h5>{props.email} Logged In</h5> : null} */}
       <h1>Profile</h1>
-      {/* 
-      <h4>Status: {props.loggedInStatus}</h4> */}
       {user ? informationArray : null}
       <Link to={`/information/${props.user.id}`}>Edit Profile Here</Link> <br />
       <Link to={`/tax-information`}>Add Tax Information Here</Link> <br />{" "}

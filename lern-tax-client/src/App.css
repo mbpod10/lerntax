@@ -12,7 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+h1 {
+  padding-top: 10px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -63,18 +65,19 @@ main {
   width: 75%;
 } */
 
+.media {
+  margin: 3rem 0;
+}
 .info-div {
   display: flex;
-  /* flex-direction: row; */
   justify-content: center;
-  /* margin: auto; */
 }
 p {
   text-align: left;
 }
-.list-group2 {
+/* .list-group2 {
   width: 25%;
-}
+} */
 body {
   /* background: radial-gradient(600px at 50% 50%, #fff 20%, #000 100%); */
   background-color: darkgray;
@@ -99,7 +102,9 @@ body {
 .liners {
   border-color: black;
 }
-
+li {
+  list-style-type: none;
+}
 tr,
 td {
   font-size: 0.75rem;
@@ -147,7 +152,7 @@ i {
     transform: rotate(360deg);
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 720px) {
   .header {
     padding: 1.5rem 1.5rem;
   }
@@ -176,7 +181,9 @@ i {
     text-align: center;
   }
   main {
-    padding: 50px;
+    /* padding: 15px 400px; */
+    padding: 15px 100px;
+
     text-align: center;
   }
   tr,
@@ -189,5 +196,92 @@ i {
   }
   p {
     font-size: 1.5rem;
+  }
+  .list-group2 {
+    width: 25%;
+  }
+  .info-div {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    /* margin: auto; */
+  }
+}
+
+/* @media (min-width: 577px) {
+  main {
+    padding: 15px 400px;
+   
+    text-align: center;
+  }
+} */
+
+@media (min-width: 1020px) {
+  .header {
+    padding: 1.5rem 1.5rem;
+  }
+  .jumbotron {
+    margin-bottom: 0;
+  }
+  .dependent-cards {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .footer {
+    border-top: black 2px;
+  }
+  .lines {
+    border-color: black 1px;
+  }
+  .form-div {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border-color: grey 1px;
+  }
+  .form-div2 {
+    margin: auto;
+    width: 75%;
+    text-align: center;
+  }
+  main {
+    padding: 15px 275px;
+    /* padding: 15px 200px; */
+
+    text-align: center;
+  }
+  tr,
+  td {
+    font-size: 1rem;
+  }
+  .tax-steps {
+    margin: auto;
+    width: 75%;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  .list-group2 {
+    width: 25%;
+  }
+  .info-div {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    /* margin: auto; */
+  }
+}
+
+/* @media (min-width: 577px) {
+  main {
+    padding: 15px 400px;
+   
+    text-align: center;
+  }
+} */
+
+@media (min-width: 1200px) {
+  main {
+    padding: 15px 400px;
   }
 }

@@ -323,17 +323,15 @@ const ItemizedDeductions = () => {
               Kevin AGI $100,000
             </ReactBootStrap.Card.Header>
             <blockquote className="blockquote mb-0">
-              <p className="small-p2">
-                <ul>
-                  <li>Unreimbursable Medical Expense: $20,000</li>
-                  <li>W-2 Line 17 State Income Tax: $5,000</li>
-                  <li>1098 MI Real Estate Tax: $7,000</li>
-                  <li>1098 MI Mortgage Interest: $3,000</li>
-                  <li>Cash Charitable Contributions: $1,000</li>
-                  <li>Gambling Losses: $1,000</li>
-                  <li>Gambling Winnings: $500</li>
-                </ul>
-              </p>
+              <ul>
+                <li>Unreimbursable Medical Expense: $20,000</li>
+                <li>W-2 Line 17 State Income Tax: $5,000</li>
+                <li>1098 MI Real Estate Tax: $7,000</li>
+                <li>1098 MI Mortgage Interest: $3,000</li>
+                <li>Cash Charitable Contributions: $1,000</li>
+                <li>Gambling Losses: $1,000</li>
+                <li>Gambling Winnings: $500</li>
+              </ul>
             </blockquote>
           </ReactBootStrap.Card.Body>
         </ReactBootStrap.Card>
@@ -365,7 +363,6 @@ const ItemizedDeductions = () => {
           <tr>
             <td colSpan="2">Section 3</td>
           </tr>
-
           <tr>
             <td colSpan="2">
               Mortgage Interest = <b>$3,000</b>
@@ -376,7 +373,6 @@ const ItemizedDeductions = () => {
               <b>Section 4</b>
             </td>
           </tr>
-
           <tr>
             <td colSpan="2">
               Charitable Contribution = <b>$1,000</b>
@@ -385,7 +381,6 @@ const ItemizedDeductions = () => {
           <tr>
             <td colSpan="2">Section 6</td>
           </tr>
-
           <tr>
             <td colSpan="2">
               Gambling Losses: $1,000 - Gambling Winnings: $500 = <b>$500</b>

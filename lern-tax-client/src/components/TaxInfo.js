@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TaxInfoForm from "../components/auth/TaxInfoForm";
 import APIConfig from "../APIConfig";
 import axios from "axios";
@@ -11,20 +11,6 @@ const TaxInfo = (props) => {
     unemployment_insurance: null,
     self_employment: null,
   });
-
-  const [infoId, setId] = useState(null);
-
-  //   useEffect(() => {
-  //     const makeAPICall = async () => {
-  //       try {
-  //         const response = await axios(`${APIConfig}/users/${props.user.id}`);
-  //         console.log("response", response);
-  //       } catch (err) {
-  //         console.error(err);
-  //       }
-  //     };
-  //     makeAPICall();
-  //   }, []);
 
   const handleChange = (event) => {
     console.log("event", event.target.name, event.target.value);
@@ -59,7 +45,6 @@ const TaxInfo = (props) => {
       })
       .then((resonse) => {
         console.log("res from  login", resonse);
-        //props.history.push(`/profile/${props.user.id}`);
       })
       .catch((error) => {
         console.log("login error", error);
