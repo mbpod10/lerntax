@@ -227,12 +227,178 @@ const ItemizedDeductions = () => {
                 it is worth $2,000 and may deduct the full $2,000. Taxpayer B
                 did not wait a whole year and therefore can only take a $1,000
                 deduction despite being valued at $2,000 at the time of the
-                donations.
+                donation.
+              </p>
+            </blockquote>
+            <ReactBootStrap.Card.Header>
+              Line 14: Add Lines 11 through 13
+            </ReactBootStrap.Card.Header>
+            <blockquote className="blockquote mb-0">
+              <p className="small-p2">
+                Add line 11 through 13, this is your total gift to charity
+                deduction.
               </p>
             </blockquote>
           </ReactBootStrap.Card.Body>
         </ReactBootStrap.Card>
       </div>
+      <div className="dependent-cards">
+        <ReactBootStrap.Card bg="dark" text="white">
+          <ReactBootStrap.Card.Body>
+            <ReactBootStrap.Card.Header>
+              Section 5: Casualty and Theft Losses
+            </ReactBootStrap.Card.Header>
+            <blockquote className="blockquote mb-0">
+              <p className="small-p2">
+                A casualty is the complete or partial destruction of property
+                resulting from an identifiable event of a sudden, unexpected, or
+                unusual nature. It must be due to an external cause, rather than
+                to a defect in the product itself. Beginning with 2018, to claim
+                a casualty loss, the taxpayer must own or be buying the damaged
+                property in a federally declared disaster area. Taxpayers must
+                have a proof of loss.
+              </p>
+            </blockquote>
+          </ReactBootStrap.Card.Body>
+        </ReactBootStrap.Card>
+      </div>
+      <div className="dependent-cards">
+        <ReactBootStrap.Card bg="dark" text="white">
+          <ReactBootStrap.Card.Body>
+            <ReactBootStrap.Card.Header>
+              Section 6: Other Itemized Deductions
+            </ReactBootStrap.Card.Header>
+            <blockquote className="blockquote mb-0">
+              <p className="small-p2">
+                There is a long list of other expenses that could potentially
+                classify as other itemized deductions. These include
+                Impairment-related work expenses for disabled individuals,
+                Federal estate tax on income in respect of a decedent,
+                Unrecovered investment in annuity, Repayments under claim of
+                right of certain types of income more than $3,000 received under
+                a claim of right (IRC, Section 1341), Casualty and theft losses
+                from income-producing property from Form 4684, Section B.
+                Qualified disaster losses, and Amortizable bond premiums on
+                taxable bonds acquired prior to October 23, 1986. However, the
+                most applicable are gambling loss deductions up to the extent of
+                losses. So a taxpayer who has $10,000 in gambling losses and
+                $500 in winnings may only deduct $500 as an itemized deduction.
+                Furthmore, a taxpayer who has $20,000 in gambling losses and
+                $10,000 in winnings may only deduct $10,000 as an itemized
+                deduction.
+              </p>
+            </blockquote>
+          </ReactBootStrap.Card.Body>
+        </ReactBootStrap.Card>
+      </div>
+      <div className="dependent-cards">
+        <ReactBootStrap.Card bg="dark" text="white">
+          <ReactBootStrap.Card.Body>
+            <ReactBootStrap.Card.Header>
+              Section 7: Total Itemized Deductions
+            </ReactBootStrap.Card.Header>
+            <blockquote className="blockquote mb-0">
+              <p className="small-p2">
+                After you complete this worksheet, add lines 4, 7, 10, 14, 15,
+                and 16 to calculate your total itemized deductions. Needless to
+                say, if your{" "}
+                <i>
+                  standard deduction is greater than your itemized deductions
+                </i>
+                , it would be wise to take the standard as it would reduce your
+                taxable income a greater amount than the itemized deductions. If
+                your itemized is greater than your standard deduction, take the
+                itemized deduction. The greater of the two would go on Form
+                1040, line 9.
+              </p>
+            </blockquote>
+          </ReactBootStrap.Card.Body>
+        </ReactBootStrap.Card>
+      </div>
+      <h1>Example</h1>
+      <div className="dependent-cards">
+        <ReactBootStrap.Card bg="dark" text="white">
+          <ReactBootStrap.Card.Body>
+            <ReactBootStrap.Card.Header>
+              Kevin AGI $100,000
+            </ReactBootStrap.Card.Header>
+            <blockquote className="blockquote mb-0">
+              <p className="small-p2">
+                <ul>
+                  <li>Unreimbursable Medical Expense: $20,000</li>
+                  <li>W-2 Line 17 State Income Tax: $5,000</li>
+                  <li>1098 MI Real Estate Tax: $7,000</li>
+                  <li>1098 MI Mortgage Interest: $3,000</li>
+                  <li>Cash Charitable Contributions: $1,000</li>
+                  <li>Gambling Losses: $1,000</li>
+                  <li>Gambling Winnings: $500</li>
+                </ul>
+              </p>
+            </blockquote>
+          </ReactBootStrap.Card.Body>
+        </ReactBootStrap.Card>
+      </div>
+      <ReactBootStrap.Table striped bordered hover variant="dark">
+        <tbody>
+          <tr>
+            <td colSpan="2">Section 1</td>
+          </tr>
+          <tr>
+            <td colSpan="2">$100,000 * 7.5% = $7,500</td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              $20,000 - $7,500 = <b>$12,500</b>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">Section 2</td>
+          </tr>
+          <tr>
+            <td colSpan="2">$5,000 + $7,000 = $12,000</td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              Less of $10,000 or $12,000 = <b>$10,000</b>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">Section 3</td>
+          </tr>
+
+          <tr>
+            <td colSpan="2">
+              Mortgage Interest = <b>$3,000</b>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              <b>Section 4</b>
+            </td>
+          </tr>
+
+          <tr>
+            <td colSpan="2">
+              Charitable Contribution = <b>$1,000</b>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">Section 6</td>
+          </tr>
+
+          <tr>
+            <td colSpan="2">
+              Gambling Losses: $1,000 - Gambling Winnings: $500 = <b>$500</b>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              Total Itemized Deductions: $12,500 + $10,000 + $3,000 + $1,000 +
+              $500 = <b>$27,000</b>
+            </td>
+          </tr>
+        </tbody>
+      </ReactBootStrap.Table>
     </>
   );
 };
