@@ -137,24 +137,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Also, the page has to be resonsive that depends on what type of device the user is using
 - Also, it has to present a clean and representation of my skill as a React and Rails developer
 
-#### MVP AND POST MVP
-
-| -   | MVP                                                     | Priority | Estimated Time | Actual Time Invetsted | Time |
-| --- | ------------------------------------------------------- | :------: | :------------: | :-------------------: | :--: |
-| 1   | Set Up Back End                                         |    H     |      -hrs      |          2hr          | -hrs |
-| 2   | Configure Rails For HTTP Cookie                         |    H     |      -hrs      |          4hr          | -hrs |
-| 3   | Create react app that allows basic user functionality   |    H     |      -hrs      |         16hr          | -hrs |
-| 4   | Front End CRUD axios calls                              |    H     |      -hrs      |          4hr          | -hrs |
-| 5   | Research Tax Law                                        |    H     |      -hrs      |         20hr          | -hrs |
-| 6   | Implement Tax Law Into App Through Writing and Examples |    H     |      -hrs      |         12hr          | -hrs |
-| 7   | Deploy Front End                                        |    H     |      -hrs      |          1hr          | -hrs |
-| 8   | Deploy BackEnd                                          |    H     |      -hrs      |          4hr          | -hrs |
-| 9   | Styling/BootStrap                                       |    H     |      -hrs      |         20hr          | -hrs |
-| -   | Total                                                   |    -     |       -        |         83hr          |  -   |
-| -   | Post MVP                                                | Priority | Estimated Time | Actual Time Invetsted | Time |
-| 10  | Create Algorithm To Calculate Taxes                     |    H     |      -hrs      |         12hr          | -hrs |
-| -   | Total                                                   |    H     |      -hrs      |         95hr          | -hrs |
-
 | React Components   |                                              Description                                               |
 | ------------------ | :----------------------------------------------------------------------------------------------------: |
 | App                |                                  Set Up App that allows Route Render                                   |
@@ -180,6 +162,24 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | ItemizedDeductions |                                      explains itemized deductions                                      |
 | StandardDeductions |                                      explains standard deductions                                      |
 | TaxList            |                               goes over various steps to calculate taxes                               |
+
+#### MVP AND POST MVP
+
+| -   | MVP                                                     | Priority | Estimated Time | Actual Time Invetsted | Time |
+| --- | ------------------------------------------------------- | :------: | :------------: | :-------------------: | :--: |
+| 1   | Set Up Back End                                         |    H     |      -hrs      |          2hr          | -hrs |
+| 2   | Configure Rails For HTTP Cookie                         |    H     |      -hrs      |          4hr          | -hrs |
+| 3   | Create react app that allows basic user functionality   |    H     |      -hrs      |         16hr          | -hrs |
+| 4   | Front End CRUD axios calls                              |    H     |      -hrs      |          4hr          | -hrs |
+| 5   | Research Tax Law                                        |    H     |      -hrs      |         20hr          | -hrs |
+| 6   | Implement Tax Law Into App Through Writing and Examples |    H     |      -hrs      |         12hr          | -hrs |
+| 7   | Deploy Front End                                        |    H     |      -hrs      |          1hr          | -hrs |
+| 8   | Deploy BackEnd                                          |    H     |      -hrs      |          4hr          | -hrs |
+| 9   | Styling/BootStrap                                       |    H     |      -hrs      |         30hr          | -hrs |
+| -   | Total                                                   |    -     |       -        |         93hr          |  -   |
+| -   | Post MVP                                                | Priority | Estimated Time | Actual Time Invetsted | Time |
+| 10  | Create Algorithm To Calculate Taxes                     |    H     |      -hrs      |         12hr          | -hrs |
+| -   | Total                                                   |    H     |      -hrs      |         105hr         | -hrs |
 
 ## Additional Libraries
 
