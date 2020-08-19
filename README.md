@@ -585,3 +585,75 @@ end
 ## Project Retrospective
 
 - After spending close to 100 hours working on the project, it came clear to me that I have enough knowledge of Javascript and the tax code to make my own TurboTax application. If I knew that I could do this from the beginning, I think I would have adapted the user models to include all taxpayer information that is needed to create a basic tax return.
+
+## How To Responsive NavBar With Bootstrap
+
+if `<ReactBootStrap.Link>` does not have an `href=""`, the hamburger nav bar on mobile will not collapse because BootStrap is anticipitating a change from the website. React is a single page application so that doesn't happen. Put an empty `href=" "` to change it
+
+```
+      <ReactBootStrap.Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        variant="dark"
+      >
+        <ReactBootStrap.Navbar.Brand>
+          <Link to="/">LernTax</Link>
+        </ReactBootStrap.Navbar.Brand>
+        <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
+          <ReactBootStrap.Nav className="mr-auto">
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/tax-basics">Basics</Link>
+            </ReactBootStrap.Nav.Link>
+
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/calc-tax">Calc</Link>
+            </ReactBootStrap.Nav.Link>
+
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/dependents">Dependents</Link>
+            </ReactBootStrap.Nav.Link>
+
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/credits">Credits</Link>
+            </ReactBootStrap.Nav.Link>
+
+            <ReactBootStrap.Nav.Link href=" ">
+              <Link to="/tax-rates">Rates</Link>
+            </ReactBootStrap.Nav.Link>
+
+            {loggedIn === "LOGGED_IN" ? (
+              <>
+                <ReactBootStrap.Nav.Link href=" ">
+                  <Link to="/dashboard">Dashboard</Link>
+                </ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link href=" ">
+                  <Link to={`/profile/${user.id}`}>Profile</Link>
+                </ReactBootStrap.Nav.Link>
+              </>
+            ) : null}
+          </ReactBootStrap.Nav>
+
+          <ReactBootStrap.Nav>
+            {loggedIn === "LOGGED_IN" ? (
+              <>
+                <ReactBootStrap.Nav.Link eventKey={2} href=" ">
+                  <Link to="/"> {email}</Link>
+                </ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link eventKey={2} href=" ">
+                  <Link to="/" onClick={() => handleLogoutClick()}>
+                    {" "}
+                    Logout
+                  </Link>
+                </ReactBootStrap.Nav.Link>
+              </>
+            ) : (
+              <ReactBootStrap.Nav.Link eventKey={2}>
+                <Link to="/login">Login</Link>
+              </ReactBootStrap.Nav.Link>
+            )}
+          </ReactBootStrap.Nav>
+        </ReactBootStrap.Navbar.Collapse>
+      </ReactBootStrap.Navbar>
+```
